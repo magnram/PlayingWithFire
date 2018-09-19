@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="windowPane" minHeight="600.0" minWidth="800.0" stylesheets="@Media/PWFStyle.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PlayingWithFire.Controller">
+   <children>
+      <ImageView fx:id="menuImageView" fitHeight="600.0" fitWidth="800.0" pickOnBounds="true">
+         <image>
+            <Image url="@Media/blank.jpg" />
+         </image>
+      </ImageView>
+      <GridPane fx:id="mapGrid" layoutX="205.0" layoutY="5.0" minHeight="0.0" minWidth="0.0" visible="false" />
+      <AnchorPane fx:id="bombPane" layoutX="205.0" layoutY="5.0" prefHeight="1.0" prefWidth="1.0" visible="false" />
+      <GridPane fx:id="bangGrid" layoutX="205.0" layoutY="5.0" visible="false" />
+      <AnchorPane fx:id="playerPane" layoutX="205.0" layoutY="5.0" prefHeight="585.0" prefWidth="585.0">
+         <children>
+            <ImageView fx:id="p4ImageView" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@Media/sprites/p4front.png" />
+               </image></ImageView>
+            <ImageView fx:id="p3ImageView" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@Media/sprites/p3front.png" />
+               </image></ImageView>
+            <ImageView fx:id="p2ImageView" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@Media/sprites/p2front.png" />
+               </image></ImageView>
+            <ImageView fx:id="p1ImageView" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@Media/sprites/p1front.png" />
+               </image></ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="menuPane" layoutX="25.0" layoutY="275.0" prefHeight="240.0" prefWidth="750.0">
+         <children>
+            <Button fx:id="zeroBotButton" disable="true" focusTraversable="false" layoutY="60.0" mnemonicParsing="false" onAction="#zeroBot" prefHeight="45.0" prefWidth="90.0" styleClass="btn" text="0 bots">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="oneBotButton" focusTraversable="false" layoutX="90.0" layoutY="60.0" mnemonicParsing="false" onAction="#oneBot" prefHeight="45.0" prefWidth="90.0" text="1 bot">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="selected" />
+               </styleClass>
+            </Button>
+            <Button fx:id="twoBotButton" focusTraversable="false" layoutX="180.0" layoutY="60.0" mnemonicParsing="false" onAction="#twoBot" prefHeight="45.0" prefWidth="90.0" styleClass="btn" text="2 bots">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="threeBotButton" focusTraversable="false" layoutX="270.0" layoutY="60.0" mnemonicParsing="false" onAction="#threeBot" prefHeight="45.0" prefWidth="90.0" styleClass="btn" text="3 bots">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="helpButton" focusTraversable="false" layoutX="460.0" layoutY="200.0" mnemonicParsing="false" onAction="#settings" prefHeight="60.0" prefWidth="90.0" style="-fx-background-color: darkgray;" styleClass="btn" text="Help">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="twoPlayerButton" focusTraversable="false" layoutX="180.0" mnemonicParsing="false" onAction="#twoPlayer" prefHeight="45.0" prefWidth="180.0" styleClass="btn" text="2 player">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="onePlayerButton" focusTraversable="false" mnemonicParsing="false" onAction="#onePlayer" prefHeight="45.0" prefWidth="180.0" text="1 player">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="selected" />
+               </styleClass>
+            </Button>
+            <Button fx:id="advancedSettingsButton" focusTraversable="false" layoutY="120.0" mnemonicParsing="false" onAction="#advancedSettings" prefHeight="45.0" prefWidth="360.0" styleClass="btn" text="Advanced settings">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="playButton" focusTraversable="false" layoutX="190.0" layoutY="200.0" mnemonicParsing="false" onAction="#play" prefHeight="60.0" prefWidth="260.0" styleClass="btn" text="Play">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="customStagesButton" focusTraversable="false" layoutX="560.0" mnemonicParsing="false" onAction="#customStages" prefHeight="45.0" prefWidth="180.0" styleClass="btn" text="Custom stages">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="defaultStagesButton" focusTraversable="false" layoutX="380.0" mnemonicParsing="false" onAction="#defaultStages" prefHeight="45.0" prefWidth="180.0" text="Default stages">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="selected" />
+               </styleClass>
+            </Button>
+            <AnchorPane fx:id="defaultStagesPane" layoutX="380.0" layoutY="45.0" maxHeight="120.0" prefHeight="120.0" prefWidth="360.0" style="-fx-background-color: rgba(0,0,0,0.1);">
+               <children>
+                  <ImageView fx:id="stageImageView" fitHeight="100.0" fitWidth="100.0" layoutX="130.0" layoutY="12.5" pickOnBounds="true">
+                     <image>
+                        <Image url="@Media/previews/preview1.jpg" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="stageRightButton" focusTraversable="false" layoutX="235.0" layoutY="47.5" mnemonicParsing="false" onAction="#stageRight" prefHeight="30.0" prefWidth="30.0" styleClass="btn" text="&gt;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="stageLeftButton" disable="true" focusTraversable="false" layoutX="95.0" layoutY="48.5" mnemonicParsing="false" onAction="#stageLeft" prefHeight="30.0" prefWidth="30.0" styleClass="btn" text="&lt;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="customStagesPane" layoutX="380.0" layoutY="45.0" prefHeight="120.0" prefWidth="360.0" style="-fx-background-color: rgba(0,0,0,0.1);" visible="false">
+               <children>
+                  <TextField fx:id="loadTextField" focusTraversable="false" layoutX="7.0" layoutY="14.0" prefHeight="40.0" prefWidth="170.0" promptText="Max. 15 character">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="loadButton" focusTraversable="false" layoutX="182.0" layoutY="14.0" mnemonicParsing="false" onAction="#load" prefHeight="40.0" prefWidth="70.0" styleClass="btn" text="Load">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="openStageBuilderButton" focusTraversable="false" layoutX="7.0" layoutY="60.0" mnemonicParsing="false" onAction="#openStageBuilder" prefHeight="45.0" prefWidth="345.0" styleClass="btn" text="Open StageBuilder">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Text fx:id="loadText" fill="WHITE" layoutX="257.0" layoutY="27.0" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No file loaded" wrappingWidth="83.99998807907104" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="interfacePane" prefHeight="600.0" prefWidth="200.0" visible="false">
+         <children>
+            <Text fx:id="timerText" layoutX="133.0" layoutY="543.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00:00">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Text>
+            <Button fx:id="exitButton" focusTraversable="false" layoutX="3.0" layoutY="560.0" mnemonicParsing="false" onAction="#exit" opacity="0.0" prefHeight="28.0" prefWidth="200.0" text="Exit">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <AnchorPane fx:id="p1InterfacePane" layoutX="2.0" layoutY="96.0" visible="false">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Media/profiles/p1Interface.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="p1healthText" layoutX="163.5" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p1bombCountText" layoutX="156.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="p2InterfacePane" layoutX="2.0" layoutY="200.0" visible="false">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Media/profiles/p2Interface.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="p2healthText" layoutX="163.5" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p2bombCountText" layoutX="156.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="p3InterfacePane" layoutX="2.0" layoutY="304.0" visible="false">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Media/profiles/p3Interface.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="p3healthText" layoutX="163.5" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p3bombCountText" layoutX="156.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="p4InterfacePane" layoutX="2.0" layoutY="408.0" visible="false">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Media/profiles/p4Interface.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="p4healthText" layoutX="163.5" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p4bombCountText" layoutX="156.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,9 @@
+.selected {
+	-fx-background-color: gold;
+}
+.btn:hover {
+	-fx-opacity: 0.8;
+}
+.unavailable {
+	-fx-background-color: darkgray;
+}
